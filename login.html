@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMSensi - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #EF5350;
+            color: white;
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+
+        .login-section {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-section img {
+            display: block;
+            margin: 0 auto 1rem;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .login-section h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .login-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-section label {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .login-section input {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .login-section button {
+            padding: 0.7rem;
+            background-color: #EF5350;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .login-section button:hover {
+            background-color: #D84315;
+        }
+
+        @media (max-width: 600px) {
+            .login-section {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            header {
+                padding: 0.5rem 0;
+            }
+
+            footer {
+                padding: 0.5rem 0;
+                font-size: 0.875rem;
+            }
+
+            .login-section h2 {
+                font-size: 1.2rem;
+            }
+
+            .login-section label {
+                font-size: 0.875rem;
+            }
+
+            .login-section input, .login-section button {
+                font-size: 0.875rem;
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MMSensi - Login</h1>
+    </header>
+
+    <main>
+        <section class="login-section">
+            <img src="./gambar/mm.png" alt="Logo MMSensi">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Contoh validasi sederhana
+            if (username === 'admin' && password === 'kelompok2') {
+                // Simpan status login di session storage
+                sessionStorage.setItem('loggedIn', 'true');
+                // Redirect ke halaman utama
+                window.location.href = 'home.html';
+            } else {
+                alert('Username atau password salah!');
+            }
+        });
+    </script>
+</body>
+</html>

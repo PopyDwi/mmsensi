@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMSensi - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #EF5350;
+            color: white;
+            padding: 0.5rem 20px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            padding-left: 10px;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        main {
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        a {
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 0.5rem;
+        }
+
+        input, select, button {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #EF5350;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d64545;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #EF5350;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                width: 100%;
+                padding: 0 10px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0.5rem 10px;
+            }
+
+            header h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="./home.html"><div class="back-button">&larr;</div></a>
+        <h1>Absensi</h1>
+    </header>
+
+    <main>
+        <section>
+            <form id="attendanceForm">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="date">Tanggal:</label>
+                <input type="date" id="date" name="date" required>
+            
+                <label for="timeIn">Jam Masuk:</label>
+                <input type="time" id="timeIn" name="timeIn" required>
+            
+                <label for="timeOut">Jam Keluar:</label>
+                <input type="time" id="timeOut" name="timeOut" required>
+            
+                <label for="status">Status Kehadiran:</label>
+                <select id="status" name="status" required>
+                    <option value="Hadir">Hadir</option>
+                    <option value="Tanpa Keterangan">Tanpa Keterangan</option>
+                    <option value="Izin">Izin</option>
+                    <option value="Sakit">Sakit</option>
+                </select>
+            
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Daftar Absensi</h2>
+            <table id="attendanceTable">
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Tanggal</th>
+                        <th>Jam Masuk</th>
+                        <th>Jam Keluar</th>
+                        <th>Status Kehadiran</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data absensi akan ditambahkan di sini -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MMSensi. Hak cipta dilindungi.</p>
+    </footer>
+
+    <script>
+        document.getElementById('attendanceForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+            const timeIn = document.getElementById('timeIn').value;
+            const timeOut = document.getElementById('timeOut').value;
+            const status = document.getElementById('status').value;
+
+            const table = document.getElementById('attendanceTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+            const cell5 = newRow.insertCell(4);
+
+            cell1.textContent = name;
+            cell2.textContent = date;
+            cell3.textContent = timeIn;
+            cell4.textContent = timeOut;
+            cell5.textContent = status;
+
+            document.getElementById('attendanceForm').reset();
+        });
+    </script>
+</body>
+</html>

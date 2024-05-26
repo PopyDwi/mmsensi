@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Information</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+        background-color: #EF5350;
+        color: white;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        /* justify-content: space-between; */
+    }
+
+    header h2{
+        padding-left: 10px;
+        font-size: 18px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #EF5350;
+            color: rgb(23, 18, 18);
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+    }
+
+    a {
+        color: #f4f4f4;
+        text-decoration: none;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+    p {
+      color: #666;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+      }
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+      header h2 {
+        padding-left: 0;
+        font-size: 16px;
+      }
+      footer {
+        position: static;
+        padding: 0.5rem 0;
+      }
+      ul {
+        padding: 0 10px;
+      }
+      li {
+        margin-bottom: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <a href="profile.html" class="back-button">&larr;</a>
+        <h2>Informasi Akun</h2>
+    </header>
+
+  <div class="container">
+    <ul>
+      <li><strong>Nomor Telepon:</strong> +62*****890</li>
+      <li><strong>Email:</strong> k***2@gmail.com</li>
+      <li><strong>Tanggal Lahir:</strong> March 19, 2000</li>
+      <li><strong>Wilayah Akun:</strong> Indonesia</li>
+      <li><strong>Nomor Rekening:</strong> 1130123456789</li>
+    </ul>
+    <!-- <p>Your account region is initially set based on the time and place of registration.</p> -->
+  </div>
+
+  <footer>
+    <p>&copy; 2024 MMSensi. All rights reserved.</p>
+</footer>
+</body>
+</html>
